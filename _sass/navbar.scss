@@ -1,0 +1,17 @@
+nav {
+  background-color: $navbar-footer-bg-color;
+
+  ul {
+    margin: 0 auto;
+    max-width: 600px;
+    text-align: center;
+    list-style: none;
+    overflow: hidden;
+  }
+  li {
+    float: left;
+    width: 50%;
+    padding: 20px 0;
+    color: #fff;
+  }
+}

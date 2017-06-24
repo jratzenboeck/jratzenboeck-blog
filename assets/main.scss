@@ -1,0 +1,59 @@
+---
+# this ensures Jekyll reads the file to be transformed into CSS later
+# only Main files contain this front matter, not partials.
+---
+
+$navbar-footer-bg-color: #555;
+$header-bg-color: lightblue;
+
+@import "header";
+@import "navbar";
+@import "home";
+@import "footer";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: lightgray;
+  font-family: "Helvetica Neue",Arial,sans-serif;
+  font-size: 16px;
+}
+
+.clear {
+  clear: both;
+}
+
+@media(max-width: 767px) {
+  article, footer > div {
+    width: 95%;
+  }
+  article {
+    padding: 5px;
+
+    .text-block {
+      font-size: 0.9em;
+    }
+  }
+}
+
+@media(min-width: 768px) and (max-width: 991px) {
+  article, header > div, footer > div {
+    width: 80%;
+  }
+  article {
+    padding: 10px;
+  }
+}
+
+@media(min-width: 992px) and (max-width: 1199px) {
+  article, header > div, footer > div {
+    width: 65%;
+  }
+  article {
+    padding: 20px;
+  }
+}

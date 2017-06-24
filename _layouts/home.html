@@ -1,0 +1,24 @@
+---
+layout: default
+---
+
+{% for post in site.posts %}
+    <article>
+        <h2>{{ post.title }}</h2>
+        <h3>{{ post.date }}</h3>
+
+        <div class="image-block">
+            <a href="{{post.url}}" title="Open {{post.title}}">
+                <img src="http://via.placeholder.com/250x200" alt="placeholder-img">
+            </a>
+        </div>
+        <div class="text-block">
+            {{ post.excerpt }}
+            <span>Read more</span>
+            <span>Comments</span>
+        </div>
+
+        <div class="clear"></div>
+    </article>
+
+{% endfor %}

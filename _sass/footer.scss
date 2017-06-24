@@ -1,0 +1,22 @@
+footer {
+  background-color: $navbar-footer-bg-color;
+  color: #fff;
+}
+
+footer > div {
+  width: 60%;
+  margin: 0px auto;
+  padding: 10px 0;
+
+  a {
+    color: #fff;
+  }
+  div:nth-child(1), div:nth-child(2) {
+    float: left;
+    width: 50%;
+  }
+  div:nth-child(2) {
+    text-align: right;
+  }
+}
+
