@@ -1,0 +1,38 @@
+.about-content {
+
+  p {
+    float: left;
+    max-width: (2 / 3) * 100%;
+  }
+
+  img {
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    clear: both;
+    margin-bottom: 20px;
+  }
+
+  ul {
+    margin-top: 10px;
+    list-style: none;
+
+    li {
+      div {
+        float: left;
+        width: 150px;
+      }
+    }
+    i, a {
+      color: #000;
+    }
+    i {
+      font-size: 1.5em;
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      vertical-align: middle;
+    }
+  }
+}
