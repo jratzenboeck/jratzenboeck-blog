@@ -1,12 +1,13 @@
 .about-content {
 
-  p {
+  p.about {
     float: left;
     max-width: (2 / 3) * 100%;
+    margin-bottom: 20px;
   }
 
   img {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
   }
 
   h2 {
