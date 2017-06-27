@@ -7,11 +7,15 @@ nav {
     text-align: center;
     list-style: none;
     overflow: hidden;
-  }
-  li {
-    float: left;
-    width: 50%;
-    padding: 20px 0;
-    color: #fff;
+
+    li {
+      float: left;
+      width: 50%;
+      padding: 20px 0;
+
+      a {
+        color: #fff;
+      }
+    }
   }
 }

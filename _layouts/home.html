@@ -3,7 +3,7 @@ layout: default
 ---
 
 {% for post in site.posts %}
-    <article>
+    <article class="content-container">
         <h2>{{ post.title }}</h2>
         <h3>{{ post.date }}</h3>
 
@@ -14,8 +14,8 @@ layout: default
         </div>
         <div class="text-block">
             {{ post.excerpt }}
-            <span>Read more</span>
-            <span>Comments</span>
+            <a href="{{post.url}}" title="Open {{post.title}}">Read more</a>
+            <span>Comments</span>   <!-- TODO: Link to disqus -->
         </div>
 
         <div class="clear"></div>

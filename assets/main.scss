@@ -5,11 +5,15 @@
 
 $navbar-footer-bg-color: #555;
 $header-bg-color: lightblue;
+$primary-padding: 30px;
+$content-width: 60%;
+$col-4: (1 / 3) * 100%;
+$col-8: (2 / 3) * 100%;
 
 @import "header";
 @import "navbar";
-@import "home";
 @import "footer";
+@import "about";
 
 * {
   margin: 0;
@@ -23,15 +27,65 @@ body {
   font-size: 16px;
 }
 
+a {
+  text-decoration: none;
+}
+
 .clear {
   clear: both;
 }
 
+.text-center {
+  text-align: center;
+}
+
+.content-container {
+  background-color: #fff;
+  padding: $primary-padding;
+  margin: 15px auto;
+  width: $content-width;
+
+  h2 {
+    font-size: 1.3em;
+  }
+
+  h3 {
+    font-size: 0.8em;
+    margin: 10px 0 20px 0;
+  }
+
+  div.image-block, div.text-block {
+    float: left;
+  }
+
+  div.image-block {
+    width: $col-4;
+    padding-right: 20px;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  div.text-block {
+    width: $col-8;
+  }
+
+  p {
+    margin-bottom: 10px;
+  }
+
+  p.full-text {
+    margin-bottom: 0;
+    margin-top: 20px;
+  }
+}
+
 @media(max-width: 767px) {
-  article, footer > div {
+  .content-container, footer > div {
     width: 95%;
   }
-  article {
+  .content-container {
     padding: 5px;
 
     .text-block {
@@ -41,19 +95,19 @@ body {
 }
 
 @media(min-width: 768px) and (max-width: 991px) {
-  article, header > div, footer > div {
+  .content-container, header > div, footer > div {
     width: 80%;
   }
-  article {
+  .content-container {
     padding: 10px;
   }
 }
 
 @media(min-width: 992px) and (max-width: 1199px) {
-  article, header > div, footer > div {
+  .content-container, header > div, footer > div {
     width: 65%;
   }
-  article {
+  .content-container {
     padding: 20px;
   }
 }
