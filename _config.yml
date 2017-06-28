@@ -10,7 +10,7 @@ facebook_account: https://facebook.com/jurgen.ratzenbock
 xing_account: https://www.xing.com/profile/Juergen_Ratzenboeck
 
 # Post settings
-excerpt_separator: <!--more>
+excerpt_separator: <!--more-->
 
 # Build settings
 markdown: kramdown
