@@ -15,7 +15,7 @@ layout: default
         <div class="text-block">
             {{ post.excerpt }}
             <a class="blog-button" href="{{post.url}}" title="Open {{post.title}}">Read more</a>
-            <a class="blog-button" href="" title="Open comments">Comments</a>   <!-- TODO: Link to disqus -->
+            <a class="blog-button" href="{{post.url}}#disqus_thread" title="Open comments">Comments</a>
         </div>
 
         <div class="clear"></div>

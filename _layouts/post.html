@@ -4,7 +4,12 @@ layout: default
 
 <article class="content-container">
     <h2 class="text-center">{{ page.title }}</h2>
-    <h3 class="text-center"><i class="fa fa-calendar"></i> {{ page.date | date: "%B %-d, %Y" }}</h3>
+    <h3 class="text-center">
+        <i class="fa fa-calendar"></i> {{ page.date | date: "%B %-d, %Y" }}
+        {% if page.comments %}
+        <a href="{{ page.url }}#disqus_thread"><i class="fa fa-comments"></i> Comments</a>
+        {% endif %}
+    </h3>
     <div>
         <img src="http://via.placeholder.com/800x450">
     </div>
@@ -33,3 +38,5 @@ layout: default
         {% endif %}
     </div>
 </article>
+
+{% include disqus.html %}
