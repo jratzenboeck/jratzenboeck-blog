@@ -8,14 +8,14 @@ layout: default
         <h3><i class="fa fa-calendar"></i> {{ post.date | date: "%B %-d, %Y" }}</h3>
 
         <div class="image-block">
-            <a href="{{post.url}}" title="Open {{post.title}}">
+            <a href="{{site.baseurl}}{{post.url}}" title="Open {{post.title}}">
                 <img src="http://via.placeholder.com/250x200" alt="placeholder-img">
             </a>
         </div>
         <div class="text-block">
             {{ post.excerpt }}
-            <a class="blog-button" href="{{post.url}}" title="Open {{post.title}}">Read more</a>
-            <a class="blog-button" href="{{post.url}}#disqus_thread" title="Open comments">Comments</a>
+            <a class="blog-button" href="{{site.baseurl}}{{post.url}}" title="Open {{post.title}}">Read more</a>
+            <a class="blog-button" href="{{site.baseurl}}{{post.url}}#disqus_thread" title="Open comments">Comments</a>
         </div>
 
         <div class="clear"></div>

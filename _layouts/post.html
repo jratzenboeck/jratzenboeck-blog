@@ -7,7 +7,7 @@ layout: default
     <h3 class="text-center">
         <i class="fa fa-calendar"></i> {{ page.date | date: "%B %-d, %Y" }}
         {% if page.comments %}
-        <a href="{{ page.url }}#disqus_thread"><i class="fa fa-comments"></i> Comments</a>
+        <a href="{{ site.baseurl }}{{ page.url }}#disqus_thread"><i class="fa fa-comments"></i> Comments</a>
         {% endif %}
     </h3>
     <div>
@@ -19,7 +19,7 @@ layout: default
     <div>
         {% if page.previous %}
         <div class="pull-left">
-            <a href="{{ page.previous.url }}" title="Link to previous post">
+            <a href="{{ site.baseurl }}{{ page.previous.url }}" title="Link to previous post">
                 <div class="navigate-to-post">PREVIOUS</div>
                 <div class="navigate-post-title">{{ page.previous.title }}</div>
             </a>
@@ -27,7 +27,7 @@ layout: default
         {% endif %}
         {% if page.next %}
         <div class="pull-right">
-            <a href="{{ page.next.url }}" title="Link to next post">
+            <a href="{{ site.baseurl }}{{ page.next.url }}" title="Link to next post">
                 <div class="navigate-to-post">NEXT</div>
                 <div class="navigate-post-title">{{ page.next.title }}</div>
             </a>
