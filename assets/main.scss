@@ -76,6 +76,7 @@ a:hover {
 
   img {
     max-width: 100%;
+    height: auto;
   }
 
   div.text-block {
@@ -92,6 +93,8 @@ a:hover {
     border-radius: 30px;
     color: #adaaaf;
     text-transform: uppercase;
+    margin-bottom: 10px;
+    display: inline-block;
   }
   .blog-button:hover {
     color: #fff;
