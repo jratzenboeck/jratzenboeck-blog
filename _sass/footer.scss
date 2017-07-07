@@ -13,9 +13,12 @@ footer > div {
   }
   div:nth-child(1), div:nth-child(2) {
     float: left;
-    width: 50%;
+  }
+  div:nth-child(1) {
+    width: $col-8;
   }
   div:nth-child(2) {
+    width: $col-4;
     text-align: right;
   }
 }

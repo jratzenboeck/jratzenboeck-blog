@@ -2,6 +2,19 @@
 layout: default
 ---
 
+{% if !site.posts %}
+<article class="content-container">
+    <h2>Welcome to my brandew tech blog!</h2>
+    <section class="new-blog">
+        This is the place where I would like to share my experiences, learnings and knowledge
+        with the awesome stuff going on in the software technology world.
+        <p style="margin-top: 20px">You caught me a bit too early so there are no blog posts yet.
+            However, the first blog post is already in preparation and will be published soon.
+        </p>
+    </section>
+</article>
+{% endif %}
+
 {% for post in site.posts %}
     <article class="content-container">
         <h2>{{ post.title }}</h2>
