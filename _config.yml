@@ -3,7 +3,7 @@ title: Jürgen's Dev Blog
 author: Jürgen Ratzenböck
 description: Hi, I am Jürgen. I am a Software Developer and passionate about full-stack web technologies.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://www.jratzenboeck.com" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://www.jratzenboeck.com" # the base hostname & protocol for your site, e.g. http://example.com
 email: juergen.ratzenboeck@gmail.com
 github_account: https://github.com/ratzi199
 facebook_account: https://facebook.com/jurgen.ratzenbock
