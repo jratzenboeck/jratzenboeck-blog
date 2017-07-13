@@ -2,27 +2,14 @@
 layout: default
 ---
 
-{% if !site.posts %}
-<article class="content-container">
-    <h2>Welcome to my brandew tech blog!</h2>
-    <section class="new-blog">
-        This is the place where I would like to share my experiences, learnings and knowledge
-        with the awesome stuff going on in the software technology world.
-        <p style="margin-top: 20px">You caught me a bit too early so there are no blog posts yet.
-            However, the first blog post is already in preparation and will be published soon.
-        </p>
-    </section>
-</article>
-{% endif %}
-
 {% for post in site.posts %}
     <article class="content-container">
-        <h2>{{ post.title }}</h2>
-        <h3><i class="fa fa-calendar"></i> {{ post.date | date: "%B %-d, %Y" }}</h3>
+        <h1>{{ post.title }}</h1>
+        <div class="post-date"><i class="fa fa-calendar"></i> {{ post.date | date: "%B %-d, %Y" }}</div>
 
         <div class="image-block">
             <a href="{{site.baseurl}}{{post.url}}" title="Open {{post.title}}">
-                <img src="http://via.placeholder.com/250x200" alt="placeholder-img">
+                <img src="{{site.baseurl}}/assets/img/{{ post.date | date: "%Y-%m-%d"}}/main.jpg" alt="placeholder-img">
             </a>
         </div>
         <div class="text-block">

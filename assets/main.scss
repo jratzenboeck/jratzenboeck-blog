@@ -16,6 +16,7 @@ $baseurl:"{{ site.baseurl }}";
 @import "footer";
 @import "about";
 @import "post";
+@import "syntax-highlighting";
 
 * {
   margin: 0;
@@ -30,6 +31,30 @@ body {
   letter-spacing: 0.5px;
   line-height: 1.5;
   color: black;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid lightgray;
+
+  td {
+    padding: 10px;
+  }
+
+  th {
+    @extend td;
+    background-color: $header-bg-color;
+    color: #fff;
+  }
+
+  tr {
+    color: black;
+  }
+
+  tr:nth-child(odd) {
+    background-color: lightgray;
+  }
 }
 
 a {
@@ -55,26 +80,31 @@ a:hover {
   margin: 15px auto;
   width: $content-width;
 
+  h1 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+
   h2 {
-    font-size: 1.3em;
+    font-size: 1.4em;
+    margin: 20px 0;
   }
 
   h3 {
-    font-size: 0.8em;
-    margin: 10px 0 20px 0;
+    @extend h2;
+    font-size: 1.2em;
   }
 
-  section.new-blog {
-    margin-top: 10px;
+  h4 {
+    @extend h2;
+    font-size: 1.1em;
   }
 
-  div.image-block, div.text-block {
-    float: left;
-  }
-
-  div.image-block {
-    width: $col-4;
-    padding-right: 20px;
+  p {
+    a {
+      text-decoration: underline;
+      color: $header-bg-color;
+    }
   }
 
   img {
@@ -86,8 +116,46 @@ a:hover {
     width: $col-8;
   }
 
+  ul, ol {
+    margin-left: 20px;
+  }
+
   p {
     margin-bottom: 20px;
+  }
+
+  /**
+ * Code formatting
+ */
+  pre,
+  code {
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    background-color: #eef;
+  }
+
+  code {
+    padding: 1px 5px;
+  }
+
+  pre {
+    padding: 8px 12px;
+    overflow-x: auto;
+
+    > code {
+      border: 0;
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+
+  div.image-block, div.text-block {
+    float: left;
+  }
+
+  div.image-block {
+    width: $col-4;
+    padding-right: 20px;
   }
 
   .blog-button {
