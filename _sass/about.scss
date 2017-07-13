@@ -7,8 +7,9 @@
     }
   }
 
-  img {
-    margin-bottom: 10px;
+  img.about-img {
+    margin-top: 10px;
+    margin-bottom: 0;
   }
 
   h2 {
@@ -16,8 +17,8 @@
     margin-bottom: 20px;
   }
 
-  ul {
-    margin-top: 10px;
+  ul.contact {
+    margin: 10px 0;
     list-style: none;
 
     li {
