@@ -110,6 +110,7 @@ a:hover {
   img {
     max-width: 100%;
     height: auto;
+    margin-bottom: 20px;
   }
 
   div.text-block {
@@ -131,7 +132,7 @@ a:hover {
   code {
     border: 1px solid lightgray;
     border-radius: 3px;
-    background-color: #eef;
+    background-color: #f3f6fa;
   }
 
   code {
@@ -151,6 +152,10 @@ a:hover {
 
   div.image-block, div.text-block {
     float: left;
+
+    img {
+      margin: 0;
+    }
   }
 
   div.image-block {

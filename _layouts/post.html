@@ -13,9 +13,9 @@ layout: default
     <div>
         <img src="{{site.baseurl}}/assets/img/{{ page.date | date: "%Y-%m-%d"}}/main.jpg" alt="Main Blog Post Image">
     </div>
-    <p class="full-text">
-        {{ content }}
-    </p>
+
+    {{ content }}
+
     <div>
         {% if page.previous %}
         <div class="pull-left">
