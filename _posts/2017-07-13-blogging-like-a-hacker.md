@@ -3,6 +3,7 @@ layout: post
 title: "Blogging like a hacker"
 category: Web
 tags: Blog, Jekyll, hacker
+comments: true
 ---
 
 Starting up with the first post on my personal tech blog with a detailed insight into how I
