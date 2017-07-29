@@ -77,7 +77,7 @@ You can inspect your new awesome site at `http://localhost:4000`.
 What you will see at first glance is a clean and simply designed website containing some
 predefined dummy content. 
 
-![Initial site at localhost:4000]({{site.baseurl}}/assets/img/2017-07-13/minima.png)
+![Initial site at localhost:4000]({{site.baseurl}}/assets/img/2017-07-29/minima.png)
  
 This lets us know that Jekyll already did some initial work under hood 
 and provides us with an initial setup. I think it is time to look at the structure and code of the project
