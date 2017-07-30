@@ -13,7 +13,7 @@ typical Wordpress blog as you can see it a thousand times on the Internet.
 What I wanted to have is a rather simplistic, clean and fast blog which is still easy and convenient to 
 update.  
 After some research on the Internet it turned out that <a href="https://jeykllrb.com" title="Official Jekyll Homepage" target="_blank">Jekyll</a>
-could be the right choice for me. In this blog post I will outline what Jekyll acutally is,
+could be the right choice for me. In this blog post I will outline what Jekyll actually is,
 why I decided to use it, how you can build a blog with it and what I like about 
 it with my knowledge so far. Enough introductory words, let's get started!
 
@@ -26,7 +26,7 @@ to create my blog or personal site when there exist things like Wordpress, Jooml
 
    In contrast to a traditional CMS like Wordpress or Joomla it does not need any database or PHP scripts running on the server to
    build HTML dynamically. This has a huge advantage when it comes to speed and performance since no database queries
-   and HTML generation on the fly has to be done. Due to the lack of database queries and dynamically built pages, the site load much faster.
+   and HTML generation on the fly has to be done. Due to the lack of database queries and dynamically built pages, the site loads much faster.
 * <b>No bumpy plugins and full control</b>
    
    Moreover, although I am definitely not a Wordpress or PHP expert it's much easier with Jekyll
@@ -104,7 +104,7 @@ it will look like in the example below.
 As you can see in the root directory there is a file `_config.yml` which contains all the global configuration
 for your blog. Here you can specify things like the title, author, description or url of your site.
 The Jekyll generator already provides for you the important and most basic properties. You are free to define further
-customer variables which can be used in your markup later on. An example therefore are the different contact
+custom variables which can be used in your markup later on. An example therefore are the different contact
 details (eg.: Email, Github, Facebook) in my blog which I don't have to repeat when using it at different places in my markup.
 I will tell you how these variables can be used if you read on.
 
@@ -136,7 +136,7 @@ I will mention those which are mostly used in the following tables.
 | title | Specify a title for your post (actually not a predefined variable but hightly recommended to use) |
 
 ### Built Site
-The `_site` directory contains the built website how it is served to the end user. Your should not do any modification
+The `_site` directory contains the built website how it is served to the end user. You should not do any modification
 here since this will be overwritten after the next build. If your webserver does not understand Jekyll you will have to upload the
 contents of this directory to make your site visible in a browser. However, I will show you a much better option in my upcoming
 blog post on how to host your Jekyll site most effectively. 
@@ -162,7 +162,7 @@ gem "minima", "~> 2.0"
 which is a default theme installed automatically by Jekyll. 
 It provides you out of the box with a basic structure of your HTML pages and a stylesheet which follows the mobile-first principle.
 You can localize this template by executing `bundle show minima`.
-What you will find there among some other files are following three folder at which I want to look at in some more detail now.
+What you will find there among some other files are following three folders at which I want to look at in some more detail now.
 
 ```
 | - _layouts
@@ -211,7 +211,7 @@ will most probably use when customizing your Jekyll site in the table below.
 
 ### Includes
 A very useful feature in my opinion for any template engine are partials. The creators of Jekyll had this thought as well
-and introduced Includes which are located in a folder called `_includes`. These actually give use the opportunity
+and introduced Includes which are located in a folder called `_includes`. These actually gives use the opportunity
 to stay DRY and don't copy HTML code which stays the same among the whole site from one place to another. 
 Predestinated parts of a page are for instance the `<head>...</head>` section or the header and footer.
 Another handy use case is embedding code conditionally like Google Analytics which you only want to have in a productive environment.
@@ -236,7 +236,7 @@ This way enables you to keep your code cleaner and modular.
 
 ### More customization
 Although the minima template provides a good starting point to get your first Jekyll site up and running
-smoothly, you probably want to create a particular customer style for your site and have more control
+smoothly, you probably want to create a particular custom style for your site and have more control
 over how things look like. To achieve this, you have several possibilities. 
 
 1. You can use a predefined template like `minima` and overwrite parts of it. If you want to change 
