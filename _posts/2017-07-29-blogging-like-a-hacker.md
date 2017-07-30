@@ -14,13 +14,13 @@ What I wanted to have is a rather simplistic, clean and fast blog which is still
 update.  
 After some research on the Internet it turned out that <a href="https://jeykllrb.com" title="Official Jekyll Homepage" target="_blank">Jekyll</a>
 could be the right choice for me. In this blog post I will outline what Jekyll acutally is,
-why I decided to use it, how I built my tech blog with it and what I like or dislike about 
+why I decided to use it, how you can build a blog with it and what I like about 
 it with my knowledge so far. Enough introductory words, let's get started!
 
 ## Why Jekyll?
-Jekyll is a blog-aware static website generator programmed in Ruby. It heavily uses Markdown
+Jekyll is a blog-aware static website generator programmed in Ruby. It uses Markdown
 and generates static HTML documents out of it. So, why should I learn yet another technology
-to create my blog or personal site when there exist things like Wordpress, Joomla or Drupal out.
+to create my blog or personal site when there exist things like Wordpress, Joomla or Drupal.
 
 * <b>Higher performance</b>
 
@@ -44,13 +44,13 @@ Now it's time to get our hands a bit dirty and start up with the first Jekyll pr
 ## Get started
 
 ### Install Ruby
-Since Jekyll has Ruby under it's hood make sure you have Ruby installed on your machine.
-I will not give a detailed description here about how you do this but rather link you to
+Since Jekyll has Ruby under its hood, make sure you have Ruby installed on your machine.
+I will not give a detailed description here about how to do this but rather link you to
 the respective <a href="https://www.ruby-lang.org/en/documentation/installation/" title="How to nstall Ruby" target="_blank">official web page</a>.
 From my experience so far the best option is to use a ruby version manager where you can
 manage multiple versions of Ruby on your machine and therefore be able to easily update 
 to the desired version. On MacOSX and Linux this would be <a href="https://rvm.io/" title="Install RVM" target="_blank">RVM</a>
-on Windows <a href="https://rubyinstaller.org/add-ons/uru.html" title="Install Uru" target="_blank">Uru</a>
+on Windows <a href="https://rubyinstaller.org/add-ons/uru.html" title="Install Uru" target="_blank">Uru</a>.
  
 ### Install Jekyll
 Installing Jekyll is now as it should be only a few commands in the Terminal.
@@ -65,8 +65,8 @@ Creating a Jekyll site is as easy as typing
 
 `jekyll new my-awesome-site`
 
-To startup your created site first change into the directory and then execute following two
-commands.
+To startup your created site first change into the directory and then execute following
+command.
 
 `jekyll serve`
 
@@ -79,7 +79,7 @@ predefined dummy content.
 
 ![Initial site at localhost:4000]({{site.baseurl}}/assets/img/2017-07-29/minima.png)
  
-This lets us know that Jekyll already did some initial work under hood 
+This lets us know that Jekyll already did some initial work implicitly
 and provides us with an initial setup. I think it is time to look at the structure and code of the project
 to understand what's going on. 
 
@@ -110,7 +110,7 @@ I will tell you how these variables can be used if you read on.
 
 ### YAML Front Matter
 Like any typical website also this site contains an index file. However, here it is a Markdown document instead of the
-traditional index.html. This brings us to to the point where the real cool magic of Jekyll happens, namely the YAML Front Matter.
+traditional index.html. This brings us to to the point where the real magic of Jekyll happens, namely the YAML Front Matter.
 If you take a look on the content of index.md you will see that it only contains three lines of code plus some explaining comment.
 The opening and closing triple dash lines `---` tell the Jekyll engine to consider it as a special file to be processed.
 In between those triple dash lines you can specify variables which can be accessed in the markup later on using a Jekyll specific language called Liquid. 
@@ -195,7 +195,7 @@ we can see basic HTML tags mixed with some unknown non-HTML expressions as in th
 The way how this works now, is that the author of a post can specify which layout should be used for a particular post and Jekyll injects your content into this
 layout to finally retrieve the resulting HTML page. As mentioned a few paragraphs earlier Liquid code
 is used to access YML front matter variables. The code snippet from above for instance uses a loop 
-to iterate over all available posts accessible via the predefined array variable `site.posts` and outputs
+to iterate over all available posts, accessible via the predefined array variable `site.posts`, and outputs
 the date in a specific format as well as a link to the detail page of the post. I summarized variables you
 will most probably use when customizing your Jekyll site in the table below.
 
@@ -212,7 +212,7 @@ will most probably use when customizing your Jekyll site in the table below.
 ### Includes
 A very useful feature in my opinion for any template engine are partials. The creators of Jekyll had this thought as well
 and introduced Includes which are located in a folder called `_includes`. These actually give use the opportunity
-to stay DRY and don't copy HTML code which is the same among the whole site from one place to another. 
+to stay DRY and don't copy HTML code which stays the same among the whole site from one place to another. 
 Predestinated parts of a page are for instance the `<head>...</head>` section or the header and footer.
 Another handy use case is embedding code conditionally like Google Analytics which you only want to have in a productive environment.
 Then you can use the `if statement` available in Liquid and only include the partial if the condition is fulfilled.
@@ -231,7 +231,7 @@ To give the site among its content and structure also a particular style, Jekyll
 The Jekyll engine converts any Sass content to plain CSS when building the site. 
 It therefore retains the same directory structure. (`/assets/main.scss` will turn into `/assets/main.css`)
 Since Sass provides the capability of `imports` you can extract page specific styles into separate files
-in the special `_sass` directory and import it via the `@import` statement in you `main.scss` file.
+in the special `_sass` directory and import it via the `@import` statement in your `main.scss` file.
 This way enables you to keep your code cleaner and modular. 
 
 ### More customization
@@ -245,14 +245,14 @@ the same name as it is called in the predefined template. This will overwrite pr
 of the template. The disadvantage in this case is that you have to know your base template quite well.
 
 2. You can copy the code from the template gem directly into your project and remove the corresponding installation
-line of the Gemfile. This enables you to have all of the template code in your project and therefore do not
+line from the Gemfile. This enables you to have all of the template code in your project and therefore do not
 have to lookup how files are named or how structure and styles of the template currently look like. This option however
 has the disadvantage that you will not receive any more updates to the template since no gem is used anymore and `bundle update` will
 not get a newer version.
 
 3. You can relinquish on any predefined template at all and create your own style from scratch. The advantage of this option
 clearly is that you fully own and understand all of the code. Moreover your are free to use any CSS framework (like Twitter Bootstrap) you want.
-The obvious disadvantage is that it is more work to build up all you HTML layout and CSS from scratch and usually takes you longer depending on your HTML and CSS skills until
+The obvious disadvantage is that it is more work to build up all your HTML layout and CSS from scratch and usually takes you longer depending on your HTML and CSS skills until
 your site does not look like any amateur crap anymore.
  
 There is no generally applicable answer which option you should decide on. 
@@ -262,7 +262,7 @@ It really depends on your individual requirements and frontend skills.
 After reading through this post and trying things out in your IDE, you should have a basic knowledge
 of how Jekyll works and how you can use it to build your place in the web. I hope you enjoyed it and 
 had a quite good impression and experience with it as I had it. I have to admit that this was only a 
-short introduction into Jekyll but it should helped you to eliminate the first few obstacles faster.
+short introduction into Jekyll but it should have helped you to eliminate the first few obstacles faster.
 If you want to dive deeper, and I hope so, the [official Jekyll documentation](https://jekyllrb.com/docs/home/ "Jekyll Docs")
 is a very good resource and provides you with all the details. 
 
