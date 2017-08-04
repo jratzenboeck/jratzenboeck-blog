@@ -1,7 +1,10 @@
 lang: en
-title: Jürgen's Dev Blog
 author: Jürgen Ratzenböck
-description: Hi, I am Jürgen. I am a Software Developer and passionate about full-stack web technologies.
+copyright: © 2017 Jürgen Ratzenböck
+title: Jürgen's Dev Blog
+description: Developer blog of Jürgen Ratzenböck
+keywords: Blog,Dev,Developer,Web,Tech,Jürgen,Ratzenböck,Full-Stack
+headline: Hi, I am Jürgen. I am a Software Developer and passionate about full-stack web technologies.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://www.jratzenboeck.com" # the base hostname & protocol for your site, e.g. http://example.com
 email: juergen.ratzenboeck@gmail.com
