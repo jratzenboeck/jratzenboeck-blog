@@ -25,3 +25,14 @@ sass:
   style: compressed
 plugins:
   - jekyll-feed
+
+# Defaults
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      comments: true
