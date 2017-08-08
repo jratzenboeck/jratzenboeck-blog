@@ -5,7 +5,7 @@ tags: Blog, Hosting, GitHub, Cloudflare
 ---
 
 In the previous blog post I introduced the static site generator Jekyll in a nutshell to you and showed you how to get
-started with it very fast. If you are not familiar with Jekyll and have not yet read this post, I encourage you to do so. 
+started with it very fast. If you are not familiar with Jekyll and have not yet read that post, I encourage you to do so. 
 <!--more-->
 You will not regret it, I promise. I hope you are ready now to come along with me on the journey to launch our brand-new website
 and make it available to the world outside of our four walls.
@@ -30,7 +30,7 @@ for my publicly available website, namely the following:
 
   My aim was to see the green color when analyzing the website with 
   <a href="https://developers.google.com/speed/pagespeed/" title="Google Pagespeed" target="_blank">Google Pagespeed</a>.
-  Therefore it is necessary to be able to adjust Caching behavior for the assets.
+  Therefore it is necessary to be able to adjust caching behavior for the assets.
 
 * <b>Fast and convenient configuration of infrastructure</b>
 
@@ -39,7 +39,7 @@ for my publicly available website, namely the following:
 * <b>HTTPS</b>
 
   Since HTTPS is essential for website visitors and is also honored in ranking algorithms of search engines like Google,
-  I set it on my goal list as well. Although it is not a definite requirements for this rather small personal website where
+  I set it on my goal list as well. Although it is not a definite requirement for this rather small personal website where
   users do not enter any confident information, there are services where you can get a free certificate and thus it
   makes sense to me to pay attention to this.
 
@@ -49,7 +49,7 @@ this technology on their provided hosting opportunity called GitHub Pages and th
 
 ## Hosting on GitHub Pages
 I assume you have a valid GitHub account which you can use to place your Jekyll powered site into a git repository.
-I will skip the steps to create a git repository on GitHub and commit your code there since this out of scope of this post.
+I will skip the steps to create a git repository on GitHub and commit your code there since this is out of scope of this post.
 The necessary git commands are mentioned on GitHub after you created the repository anyway.
 Hint: Add a .gitignore file to your project to exclude files and folders which should not go into the repository.
 My .gitignore file has the following content.
@@ -101,9 +101,9 @@ your domain in the text box "Custom domain" in the presented GitHub pages sectio
 to your project which indicates that your site should be served via this domain.
 
 ### Setup Apex domain at your DNS provider
-To setup your apex domain you have to use the provided web interface of your DNS provider. Usually you can manually create
+To setup your Apex domain you have to use the provided web interface of your DNS provider. Usually you can manually create
 a new DNS record with type A. This requires you to point that record to IP address(es) which in case of GitHub Pages are
-`192.30.252.153` and `192.30.252.154`. Read more details <a href="https://help.github.com/articles/setting-up-an-apex-domain/" title="GitHub Pages Apex Domain" target="_blank">here</a>
+`192.30.252.153` and `192.30.252.154`. Read more details <a href="https://help.github.com/articles/setting-up-an-apex-domain/" title="GitHub Pages Apex Domain" target="_blank">here</a>.
 The nasty part now is that you usually have to wait some hours (up to a day) until your DNS changes
 are reflected and your site gets accessible via your root domain. On Unix systems you can use `dig <your-domain> +noall +answer`
 to check if your changes have already gone through.
@@ -113,37 +113,39 @@ Since it is not much more effort, I (and also GitHub) recommend to set up a www 
 To do this you have to add another DNS record at your DNS provider, namely a CNAME. A CNAME does not point
 to one or more IP addresses but rather to a domain name which especially has the advantage of fault tolerance.
 In contrast to an A-record a change of the pointed IP address does not cause a downtime. Moreover
-your website will be reachable via www.<your-domain>.<tld> which is how most Internet users will access it.
+your website will be reachable via `www.<your-domain>.<tld>` which is how most Internet users will access it.
 As it is with A-records you have to consider a similar waiting time until your changes are live. Again you can use dig to
 check this. 
 
 If you have followed this guide, your Jekyll website should be hosted on GitHub Pages and accessible via a custom domain successfully.
 So far so good, most of the goals seem to be already reached but as you probably have noticed the HTTPS we had earlier with the
 freely provided github.io url is gone. Moreover a analysis by <a href="https://developers.google.com/speed/pagespeed/" title="Google Pagespeed" target="_blank">Google's Pagespeed</a>
-will most probably show some room for improvement when it comes to Caching. So, let's fix this.
+will most probably show some room for improvement when it comes to caching. So, let's fix this.
 
-## Use Cloudflare CDN to leverage Caching and get free TLS
+## Use Cloudflare CDN to leverage caching and get free TLS
 You hopefully agree with me that hosting a Jekyll site on GitHub is very easy and convenient.
 No manual configuration of a web server and any system administration is necessary. I think I did not promise too much.
 But there is nearly no advantage without a drawback and so it is the same here. Since GitHub manages everything for you
 when it comes to hosting, you have no opportunities to set any Cache headers or place a SSL certificate anywhere.
 Below the textbox where you entered your custom domain GitHub also lets you know that HTTPS cannot be enabled for a custom domain.
-So, what to do now? Luckily I quickly found a solution for this by placing a CDN in front of the GitHub Pages infrastructure.
+So, what to do now? Luckily, I quickly found a solution for this by placing a CDN in front of the GitHub Pages infrastructure.
 <a href="https://cloudflare.com" title="Cloudflare CDN" target="_blank">Cloudflare CDN</a> seems to be a good choice here since it first of all also provides a
 free plan which allows to customize caching behavior, 3 free page rules where you can setup for instance redirects and
 also offers a solution for the SSL challenge.
-![Cloudflare Landing Page]({{site.baseurl}}/assets/img/2017-08-07/cloudflareLanding.png)
+
+![Cloudflare Landing Page]({{site.baseurl}}/assets/img/2017-08-08/cloudflareLanding.png)
 ### Use Cloudflare nameservers for your domain
 After you have created your free Cloudflare account you can start to use it for your brand-new custom domain by following
 a few wizard steps. First of all you have to start scanning for your domain by entering your domain as indicated in the image below.
-![Cloudflare Domain Scanning]({{site.baseurl}}/assets/img/2017-08-07/cloudflareScanning.png)
+![Cloudflare Domain Scanning]({{site.baseurl}}/assets/img/2017-08-08/cloudflareScanning.png)
 The scanning process takes a few minutes before you are provided with an overview on the existing
 DNS records and nameservers. It already gives you the hint that you have to change the nameservers to use
 the mentioned Cloudflare nameservers. Therefore you have to lookup the nameserver configuration at the web interface
 of your DNS provider. In addition you can add or modify DNS record entries and decide which ones
 should go through Cloudflare.
-![Cloudflare DNS records]({{site.baseurl}}/assets/img/2017-08-07/cloudflareDnsRecords.png)
-![Cloudflare Nameservers]({{site.baseurl}}/assets/img/2017-08-07/cloudflareNameservers.png)
+
+![Cloudflare DNS records]({{site.baseurl}}/assets/img/2017-08-08/cloudflareDnsRecords.png)
+![Cloudflare Nameservers]({{site.baseurl}}/assets/img/2017-08-08/cloudflareNameservers.png)
 This is basically the essential configuration step here. You can leave any other setting presented to you in the wizard
 as it is for now. We will adjust the (to me) important ones afterwards. As expected, nameserver changes may take a longer
 time again to actually take effect.
@@ -154,9 +156,9 @@ As it says in the description it can take up to 24 hours to provide you with a n
 In case of SSL some strange behavior can occur with Cloudflare. At least in my case it happened that I could already
 access my website via https a few hours after the change but the next request again showed me the following error.
 
-![Cloudflare SSL Site is not secure]({{site.baseurl}}/assets/img/2017-08-07/cloudflareConnectionNotPrivate.png)
+![Cloudflare SSL Site is not secure]({{site.baseurl}}/assets/img/2017-08-08/cloudflareConnectionNotPrivate.png)
 
-From this point on it sporadically worked and due to that reason I contacted the Cloudflare account on the next day.
+From this point on it sporadically worked and due to that reason I contacted the Cloudflare support on the next day.
 They responded a few hours later and told me that it took a while to provide the active certificate but everything should be working
 fine now. Indeed, from this point on HTTPs worked like a charm. The strange thing was that I evaluated the website with
 the free SSL verification service of <a href="https://startssl.com" title="StartSSL" target="_blank">StartSSL</a> hours before 
@@ -164,7 +166,7 @@ and it gave me a positive result. Accessing with Chrome and Safari nonetheless d
 Whatever really happened on Cloudflare's side after I contacted them, it at least worked.
 So, don't panic if takes really long until SSL is working.
 
-![SSL Labs Verification]({{site.baseurl}}/assets/img/2017-08-07/ssllabs.png)
+![SSL Labs Verification]({{site.baseurl}}/assets/img/2017-08-08/ssllabs.png)
 
 Since you probably do not want to allow any plain HTTP requests anymore, you have to get your requests only use HTTPS.
 
@@ -173,7 +175,7 @@ To solve this there are basically two options:
 * Add a page rule to redirect all HTTP traffic to HTTPS: In the free plan you can add up to three rules under tab "Page Rules".
   Add a rule for http://<your-domain>.com/* and set it to "Always use HTTPS".
 
-  ![Cloudflare Page Rules]({{site.baseurl}}/assets/img/2017-08-07/cloudflarePageRule.png)
+  ![Cloudflare Page Rules]({{site.baseurl}}/assets/img/2017-08-08/cloudflarePageRule.png)
 
 * Enable HSTS (HTTP Strict Transport Security): This is the latest mechanism to force HTTPS requests. The server adds to the
   HTTP response an additional header which tells the browser that only HTTP connections via TLS are allowed in the future. Moreover
@@ -182,11 +184,11 @@ To solve this there are basically two options:
   <b>However, it is really important to consider that before enabling HSTS you have to ensure that you have a valid SSL certificate and plan
   to serve your site only via HTTPS in the future since the browser sticks to HTTPS for as long as max-age is set!</b>
 
-  ![Cloudflare HSTS]({{site.baseurl}}/assets/img/2017-08-07/cloudflareHSTS.png)
+  ![Cloudflare HSTS]({{site.baseurl}}/assets/img/2017-08-08/cloudflareHSTS.png)
 
 ### Caching
 GitHub Pages automatically sets the caching time for assets to 2 hours which is too short to be honored by Google Pagespeed.
-With CloudFlare you can adjust Browser caching as you want to. These settings can be found under the Caching tab.
+With CloudFlare you can adjust browser caching as you want to. These settings can be found under the caching tab.
 This helps you to make your page load faster if a website visitor comes back and loads the site a second time.
 
 ## Conclusion
