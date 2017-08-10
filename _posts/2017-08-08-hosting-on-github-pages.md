@@ -73,7 +73,7 @@ Now the only thing you have to do to publish your website to GitHub Pages is to 
 on GitHub and then click the Settings tab on the right hand side of the top bar. If you scroll down a bit you will find
 a section called GitHub Pages as illustrated in the figure below.
 
-![GitHub Pages settings]({{site.baseurl}}/assets/img/2017-08-07/ghpages.png)
+![GitHub Pages settings]({{site.baseurl}}/assets/img/2017-08-08/ghpages.png)
 
 Just select a branch like `master` and save. After saving you can inspect your website already
 under the provided domain `https://<repository-name>.github.io`.

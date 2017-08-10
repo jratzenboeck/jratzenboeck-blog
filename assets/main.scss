@@ -110,7 +110,8 @@ a:hover {
   img {
     max-width: 100%;
     height: auto;
-    margin-bottom: 20px;
+    margin: 0 auto 20px auto;
+    display: block;
   }
 
   div.text-block {
