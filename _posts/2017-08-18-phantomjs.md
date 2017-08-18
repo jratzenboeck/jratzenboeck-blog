@@ -1,20 +1,20 @@
 ---
-title: Execute browser-like Javascript without a Browser
+title: Execute browser-like Javascript without a browser
 category: Web
 tags: Javascript, PhantomJS, DOM
 ---
 
 If you are familiar with nowadays web development, you most probably have already 
-worked with frameworks like AngularJS or EmberJS. Today I want to introduce you a Javascript framework I came along recently which is not that sort of popularity as the two I mentioned
+worked with frameworks like AngularJS or EmberJS. Today I want to introduce you a Javascript framework I came along recently which is not that popular as the two I mentioned
 and you might not have heard of so far, namely <a href="http://phantomjs.org/" title="PhantomJS Website" target="_blank">PhantomJS</a>.
 <!--more-->
 However, it's not less interesting and can be quite handy in some use cases as I will show you in the following paragraphs.
 After the quick start examples I would like to show you in the last section how I built a pre-rendering engine to be used 
-for crawlers and social sites with PhantomJS. Let's get started right away.
+for crawlers and social sites with PhantomJS. Let's get started now.
 
 ## What is PhantomJS
 "PhantomJS is a headless WebKit scriptable with a JavaScript API" as it says in the first sentence on their website pretty 
-accurate. To put it simply, this means PhantomJS is like a browser with no UI. At first glance this does not sound very
+accurate. To put it simple, this means PhantomJS is like a browser with no UI. At first glance this does not sound very
 helpful in any way but if you look at it in more detail it actually has some advantages from a developer's perspective,
 which I will outline later on. Before that, let's quick start with the smallest possible example.
 
@@ -127,7 +127,7 @@ want to use and overwrite `spec` which is the default. You can for instance get 
 `markdown` as parameter. Attentive readers probably ask why we need to include a stylesheet called `mocha.css` in this HTML
 when we execute the tests on the command line anyway. And, you are right. You do not necessarily need this CSS file here
 and even the special `<div id="mocha"` is optional when executing via PhantomJS. However, if you are going to open the HTML
-test runner in a browser you will see a pretty overview on passed and failed test if you leave it there. (See the image below)
+test runner in a browser you will see a pretty overview on passed and failed tests if you leave it there. (See the image below)
 
 ![Mocha test results visible in browser]({{site.baseurl}}/assets/img/2017-08-18/mocha-phantomjs.png)
 
