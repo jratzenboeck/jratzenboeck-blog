@@ -11,7 +11,7 @@ layout: default
         {% endif %}
     </div>
     <div>
-        <img src="{{site.baseurl}}/assets/img/{{ page.date | date: "%Y-%m-%d"}}/main.jpg" alt="Main Blog Post Image">
+        {% include main-post-image.html %}
     </div>
 
     {{ content }}

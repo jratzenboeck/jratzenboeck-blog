@@ -9,7 +9,12 @@ layout: default
 
         <div class="image-block">
             <a href="{{site.baseurl}}{{post.url}}" title="Open {{post.title}}">
-                <img src="{{site.baseurl}}/assets/img/{{ post.date | date: "%Y-%m-%d"}}/main.jpg" alt="placeholder-img">
+                <picture>
+                    <source media="(max-width: 767px)" srcset="{{site.baseurl}}/assets/img/{{ post.date | date: "%Y-%m-%d"}}/main_300.jpg">
+                    <source media="(max-width: 991px)" srcset="{{site.baseurl}}/assets/img/{{ post.date | date: "%Y-%m-%d"}}/main_400.jpg">
+                    <source media="(max-width: 1199px)" srcset="{{site.baseurl}}/assets/img/{{ post.date | date: "%Y-%m-%d"}}/main_500.jpg">
+                    <img src="{{site.baseurl}}/assets/img/{{ post.date | date: "%Y-%m-%d"}}/main.jpg" alt="Main Blog Post Image">
+                </picture>
             </a>
         </div>
         <div class="text-block">
