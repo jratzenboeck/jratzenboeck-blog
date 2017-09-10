@@ -39,8 +39,8 @@ and can then be imported in your TypeScript code with the ES6 import statement w
 Depending on the specified target and module loading syntax in your `tsconfig.json` compiler options, you will see those imports
 reflected in the resulting JavaScript. 
 
-So far so good but if we again have a look on the import statement from above, the question arises how the browser should know how to import
-this `@angular/core` module and where to find it? Indeed, the browsers do not know this because they are not able to do ES6 module loading 
+So far so good but if we again have a look on the import statement from above, the question arises how the Browser should know how to import
+this `@angular/core` module and where to find it? Indeed, the Browsers do not know this because they are not able to do ES6 module loading 
 and apparently fail to find the library module. Although there is the possibility to manually include the imported modules
 via `<script>` tags in the HTML and get things working, this has no practical relevance since you have to care about every 
 used module (and you quickly need quite a lot of them) in the project and also ensure the correct order of including them.
@@ -50,19 +50,20 @@ This is were so called module loaders come into play.
 In this section I want to describe how SystemJS solves the dilemma of loading required ES modules to make it more convenient for the developer.
 
 ### Why SystemJS
-First of all I have to mention that there are also alternative module loaders like Webpack or RequireJS available. The were two main reasons
-why I decided to use SystemJS in the first place. Firstly, due to its existence in the angular-quickstart project and the reputation
-of being understandable in a shorter time than Webpack for instance, which popularity has been growing rapidly but also
-has a steeper learning curve. Moreover I have been using gulp for quite a while to automate and create an enhanced
+First of all I have to mention that there are also alternative module loaders like Webpack or RequireJS available. There were two main reasons
+why I decided to use SystemJS in the first place. Firstly, due to the impression I got after some research on Google
+where it is described as being understandable in a shorter time than Webpack for instance. Although Webpack has been growing in popularity rapidly, it has a steeper learning curve. 
+Secondly, I have been using Gulp for quite a while to automate and create an enhanced
 building workflow throughout web projects and I preferred to use it for my Angular 2+ project as well. More details on how to use
 SystemJS with Gulp in conjunction will follow later on. Webpack on the other hand
-is not only an ES module loader but rather a much richer tool and in my opinion a competitor to Gulp.
+is not only an ES module loader but rather a much richer tool and in my opinion a competitor to Gulp. Anyway, it also seems to be
+quite interesting to take a look at in the nearer future since more and more web projects start to use it.
 
 ### How does SystemJS work
 SystemJS basically does the work you would have to do by hand manually, namely searching the specified Angular modules
 in our project and importing them in the correct order to make sure that every Angular module which uses code from another module
 has it imported correctly. As a developer you then only have to specify the root module in your index.html
-file and SystemJS load everything else for you. The necessary ingredient therefore is a configuration file to tell the 
+file and SystemJS loads everything else for you. The necessary ingredient therefore is a configuration file to tell the 
 SystemJS loader where to find all the modules you want to load in your TypeScript code. This is usually the systemjs.config.js file.
 Following code snippet shows how its structure looks like.
 
@@ -130,12 +131,12 @@ powerful toolbox I like Gulp for such kind of things. The following paragraphs a
 use Gulp tasks to improve local development and testing on the one hand and make your Angular 2+ app ready for productive use on the other hand.
 
 ### Setting up Gulp for building web projects
-The preferred way to install gulp is by installing the according package globally as following
+The preferred way to install Gulp is by installing the according package globally as following
 
 `npm install -g gulp`
 
 This enables you to use the `gulp` command in every project where you want to support building with Gulp.
-They only thing you then need is a file where you specify how your project has to be built, namely the build pipeline. 
+The only thing you then need is a file where you specify how your project has to be built, namely the build pipeline. 
 In Gulp this is done by implementing separate tasks and chaining them together to execute them in a row.
 Following example illustrates how such a task can look like:
 
@@ -192,8 +193,8 @@ product. Every required package shown in the code snippets has to be installed v
     module loader into Gulp. Luckily there is a SystemJS builder for Gulp, which you provide
     the location of the config file as described in the second section of the post. The buildStatic method then gets the
     location of the compiled main.js file created by the compile task before and the desired output filename after loading
-    all required modules. The output is again a gulp stream which can be further processed. In this simplified example the 
-    generated app.js file gets copied to the destination directory. For production usage you can insert a minfication step
+    all required modules. The output is again a Gulp stream which can be further processed. In this simplified example the 
+    generated app.js file gets copied to the destination directory. For production usage you can insert a minification step
     in between if you want to deliver the smallest possible file size where your JavaScript code resides in.
 
     ```
@@ -211,7 +212,7 @@ product. Every required package shown in the code snippets has to be installed v
 4. <b>Bundle vendor JavaScript</b>
 
    Angular 2+ needs some other JavaScript libraries to work as expected. Moreover, you probably want to use some other 
-   libraries like jquery as well. Instead of including them separately a gulp task to bundle them is better.
+   libraries like jquery as well. Instead of including them separately a Gulp task to bundle them is better.
    
    ```
    var vendorJS = [
@@ -237,7 +238,7 @@ product. Every required package shown in the code snippets has to be installed v
    
 6. <b>Start a webserver</b>
 
-   To test your Angular 2+ app in your browser, there is also a package providing a lite web server.
+   To test your Angular 2+ app in your Browser, there is also a package providing a lite web server.
    The according Gulp task looks like following.
    
    ```
