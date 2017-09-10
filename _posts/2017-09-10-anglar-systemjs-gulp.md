@@ -11,7 +11,8 @@ of parts from the old one.
 <!--more--> 
 As a web developer I have been using AngularJS 1 (I will just call it AngularJS as it is done officially as well) for about 
 two years but recently had the chance to start a new project with Angular in its latest version. One of the big differences to AngularJS for me 
-was the way how an Angular 2+ app (the latest version is Angular 4 but since Angular 2 there only minor changes have been introduced) 
+was the way how an Angular 2+ app (the latest version is Angular 4 but since Angular 2 only minor changes have been introduced. From now on I will call
+it Angular 2+ when I am talking about Angular version 2 and upwards) 
 is built and bundled to be ready for productive use. It's not my intention to provide 
 a tutorial about developing an Angular 2+ app (there is a very good quick start tour on the 
 <a href="https://angular.io/" title="Angular website" target="_blank">official website</a>) but rather want to tell you a bit 
