@@ -1,6 +1,7 @@
 <picture>
-    <source media="(max-width: 767px)" srcset="{{site.baseurl}}/assets/img/{{ page.date | date: "%Y-%m-%d"}}/main_300.jpg">
-    <source media="(max-width: 991px)" srcset="{{site.baseurl}}/assets/img/{{ page.date | date: "%Y-%m-%d"}}/main_400.jpg">
-    <source media="(max-width: 1199px)" srcset="{{site.baseurl}}/assets/img/{{ page.date | date: "%Y-%m-%d"}}/main_500.jpg">
+    <source media="(max-width: 767px)" sizes="100w" srcset="{{site.baseurl}}/assets/img/{{ page.date | date: "%Y-%m-%d"}}/main_300.jpg">
+    <source media="(max-width: 991px)" sizes="100w" srcset="{{site.baseurl}}/assets/img/{{ page.date | date: "%Y-%m-%d"}}/main_400.jpg">
+    <source media="(max-width: 1199px)" sizes="80w" srcset="{{site.baseurl}}/assets/img/{{ page.date | date: "%Y-%m-%d"}}/main_500.jpg">
+    <source sizes="60w" srcset="{{site.baseurl}}/assets/img/{{ page.date | date: "%Y-%m-%d"}}/main.jpg">
     <img src="{{site.baseurl}}/assets/img/{{ page.date | date: "%Y-%m-%d"}}/main.jpg" alt="Main Blog Post Image">
 </picture>
