@@ -11,7 +11,11 @@ layout: default
         {% endif %}
     </div>
     <div>
-        {% include main-post-image.html %}
+        <img srcset="{{site.baseurl}}/assets/img/{{ page.date | date: "%Y-%m-%d"}}/main.jpg 1000w,
+                     {{site.baseurl}}/assets/img/{{ page.date | date: "%Y-%m-%d"}}/main_500.jpg 500w,
+                     {{site.baseurl}}/assets/img/{{ page.date | date: "%Y-%m-%d"}}/main_400.jpg 400w,
+                     {{site.baseurl}}/assets/img/{{ page.date | date: "%Y-%m-%d"}}/main_300.jpg 300w"
+             src="{{site.baseurl}}/assets/img/{{ page.date | date: "%Y-%m-%d"}}/main.jpg"/>
     </div>
 
     {{ content }}
