@@ -9,10 +9,10 @@ layout: default
 
         <div class="image-block">
             <a href="{{site.baseurl}}{{post.url}}" title="Open {{post.title}}">
-                <img srcset="{{site.baseurl}}/assets/img/{{ post.date | date: "%Y-%m-%d"}}/main_500.jpg 1000w,
+                <img class="js-lazy-image" data-srcset="{{site.baseurl}}/assets/img/{{ post.date | date: "%Y-%m-%d"}}/main_500.jpg 1000w,
                              {{site.baseurl}}/assets/img/{{ post.date | date: "%Y-%m-%d"}}/main_400.jpg 500w,
                              {{site.baseurl}}/assets/img/{{ post.date | date: "%Y-%m-%d"}}/main_300.jpg 400w"
-                     src="{{site.baseurl}}/assets/img/{{ post.date | date: "%Y-%m-%d"}}/main_500.jpg" />
+                     data-src="{{site.baseurl}}/assets/img/{{ post.date | date: "%Y-%m-%d"}}/main_500.jpg" />
             </a>
         </div>
         <div class="text-block">
