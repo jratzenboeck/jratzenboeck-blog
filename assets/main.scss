@@ -79,6 +79,8 @@ a:hover {
   padding: $primary-padding;
   margin: 15px auto;
   width: $content-width;
+  text-align: justify;
+  hyphens: auto;
 
   h1 {
     font-size: 1.5em;
