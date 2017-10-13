@@ -1,8 +1,8 @@
 lang: en
 author: Jürgen Ratzenböck
 copyright: © 2017 Jürgen Ratzenböck
-title: Jürgen's Dev Blog
-description: Developer blog of Jürgen Ratzenböck
+title: Learn about full-stack web development - Jürgen's Dev Blog
+description: This is the personal developer blog of Jürgen Ratzenböck. I am passionate about full-stack web development and blog about my latest experience.
 keywords: Blog,Dev,Developer,Web,Tech,Jürgen,Ratzenböck,Full-Stack
 headline: Hi, I am Jürgen. I am a Software Developer and passionate about full-stack web technologies.
 baseurl: "" # the subpath of your site, e.g. /blog
