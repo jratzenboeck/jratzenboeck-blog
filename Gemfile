@@ -14,3 +14,4 @@ gem "jekyll", "3.5.0"
 # Other dependencies
 gem 'jekyll-feed'
 gem 'rouge'
+gem 'jekyll-sitemap'
