@@ -66,7 +66,7 @@ This can then look like following.
     }
 }
 ```  
-I guess the additional rule defined in the example is self explaining as most of the rules I have read through so fare do.
+I guess the additional rule defined in the example is self explaining as most of the rules I have read through so far do.
 
 In order to execute the linting according to your defined rule set simply execute `stylelint <path/to/css/*.css>`. If you 
 have not installed stylelint globally find the executable in the `node_modules` folder.
